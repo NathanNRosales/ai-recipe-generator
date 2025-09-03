@@ -11,6 +11,7 @@ import awsExports from './aws-exports';
 import "@aws-amplify/ui-react/styles.css";
 
 Amplify.configure(awsExports);
+Amplify.configure(outputs);
 
 const amplifyClient = generateClient<Schema>({
   authMode: "apiKey",
