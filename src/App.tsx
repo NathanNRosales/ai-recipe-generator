@@ -6,13 +6,14 @@ import { Schema } from "../amplify/data/resource";
 import { generateClient } from "aws-amplify/data";
 import outputs from "../amplify_outputs.json";
 import React from "react";
-
+import { API, graphqlOperation } from 'aws-amplify';
+import awsExports from './aws-exports';
 import "@aws-amplify/ui-react/styles.css";
 
-Amplify.configure(outputs);
+Amplify.configure(awsExports);
 
 const amplifyClient = generateClient<Schema>({
-  authMode: "userPool",
+  authMode: "apiKey",
 });
 
 function App() {
