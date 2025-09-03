@@ -6,8 +6,8 @@ import { Schema } from "../amplify/data/resource";
 import { generateClient } from "aws-amplify/data";
 
 import React from "react";
-import { API, graphqlOperation } from 'aws-amplify';
-import awsExports from './aws-exports';
+//import { API, graphqlOperation } from 'aws-amplify';
+//import awsExports from './aws-exports';
 import "@aws-amplify/ui-react/styles.css";
 
 
@@ -27,7 +27,7 @@ const apiConfig = {
 
 
 
-Amplify.configure(awsExports);
+//Amplify.configure(awsExports);
 
 
 const amplifyClient = generateClient<Schema>({
