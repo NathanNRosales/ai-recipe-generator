@@ -10,28 +10,14 @@ import amplifyOutputs from "./amplify_outputs.json"; // <-- Import the JSON
 import "@aws-amplify/ui-react/styles.css";
 
 
-const authConfig = {
-  userPoolId: import.meta.env.VITE_USER_POOL_ID,
-  userPoolClientId: import.meta.env.VITE_USER_POOL_CLIENT_ID,
-  identityPoolId: import.meta.env.VITE_IDENTITY_POOL_ID,
-  region: import.meta.env.VITE_AWS_REGION,
-};
-
-const apiConfig = {
-  graphqlEndpoint: import.meta.env.VITE_APPSYNC_URL,
-  apiKey: import.meta.env.VITE_APPSYNC_API_KEY,
-};
 
 
+// ✅ Configure Amplify using amplify_outputs.json
+Amplify.configure(amplifyOutputs);
 
+// ✅ Generate the client
+const amplifyClient = generateClient<Schema>();
 
-
-//Amplify.configure(awsExports);
-
-
-const amplifyClient = generateClient<Schema>({
-  authMode: "apiKey",
-});
 
 function App() {
   const [result, setResult] = useState<string>("");
