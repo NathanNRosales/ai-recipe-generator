@@ -6,7 +6,7 @@ import React from "react";
 import { Amplify } from "aws-amplify";
 import { generateClient } from "aws-amplify/data";
 import { Schema } from "../amplify/data/resource";
-import amplifyOutputs from "../amplify_outputs.json"; // <-- Import the JSON
+import amplifyOutputs from "./amplify_outputs.json"; // <-- Import the JSON
 import "@aws-amplify/ui-react/styles.css";
 
 // ✅ Configure Amplify using amplify_outputs.json
