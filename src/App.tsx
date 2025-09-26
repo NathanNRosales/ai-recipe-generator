@@ -1,25 +1,6 @@
 import { FormEvent, useState } from "react";
 import { Loader, Placeholder } from "@aws-amplify/ui-react";
 import "./App.css";
-<<<<<<< HEAD
-import React from "react";
-//see
-import { Amplify } from "aws-amplify";
-import { generateClient } from "aws-amplify/data";
-import { Schema } from "../amplify/data/resource";
-import amplifyOutputs from "./amplify_outputs.json"; // <-- Import the JSON
-import "@aws-amplify/ui-react/styles.css";
-
-
-
-
-// ✅ Configure Amplify using amplify_outputs.json
-Amplify.configure(amplifyOutputs);
-
-// ✅ Generate the client
-const amplifyClient = generateClient<Schema>();
-
-=======
 import { Amplify } from "aws-amplify";
 import { GraphQLResult } from "aws-amplify/api";
 import { generateClient } from "aws-amplify/api";
@@ -46,7 +27,6 @@ console.log("Loaded VITE_APPSYNC_API_KEY:", import.meta.env.VITE_APPSYNC_API_KEY
 
 // Create GraphQL client
 const client = generateClient({ authMode: "apiKey" });
->>>>>>> restore-0b7bc26
 
 function App() {
   const [result, setResult] = useState<string>("");
