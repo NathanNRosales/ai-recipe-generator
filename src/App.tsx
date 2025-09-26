@@ -1,6 +1,7 @@
 import { FormEvent, useState } from "react";
 import { Loader, Placeholder } from "@aws-amplify/ui-react";
 import "./App.css";
+<<<<<<< HEAD
 import React from "react";
 //see
 import { Amplify } from "aws-amplify";
@@ -18,6 +19,34 @@ Amplify.configure(amplifyOutputs);
 // ✅ Generate the client
 const amplifyClient = generateClient<Schema>();
 
+=======
+import { Amplify } from "aws-amplify";
+import { GraphQLResult } from "aws-amplify/api";
+import { generateClient } from "aws-amplify/api";
+import { askBedrock } from "./graphql/queries"; // generated query
+import "@aws-amplify/ui-react/styles.css";
+
+// Configure Amplify
+Amplify.configure({
+  API: {
+    GraphQL: {
+      endpoint: import.meta.env.VITE_APPSYNC_URL,
+      region: import.meta.env.VITE_AWS_REGION,
+      defaultAuthMode: "apiKey",
+      apiKey: import.meta.env.VITE_APPSYNC_API_KEY,
+    },
+  },
+});
+
+console.log("Loaded VITE_APPSYNC_URL:", import.meta.env.VITE_APPSYNC_URL);
+console.log("Loaded VITE_AWS_REGION:", import.meta.env.VITE_AWS_REGION);
+console.log("Loaded VITE_APPSYNC_API_KEY:", import.meta.env.VITE_APPSYNC_API_KEY);
+
+
+
+// Create GraphQL client
+const client = generateClient({ authMode: "apiKey" });
+>>>>>>> restore-0b7bc26
 
 function App() {
   const [result, setResult] = useState<string>("");
@@ -29,20 +58,25 @@ function App() {
 
     try {
       const formData = new FormData(event.currentTarget);
-      
-      const { data, errors } = await amplifyClient.queries.askBedrock({
-        ingredients: [formData.get("ingredients")?.toString() || ""],
+      const ingredients = formData.get("ingredients")?.toString() || "";
+
+      const response = await client.graphql({
+        query: askBedrock,
+        variables: {
+          ingredients: ingredients.split(",").map((item) => item.trim()),
+        },
       });
 
-      if (!errors) {
-        setResult(data?.body || "No data returned");
+      const { data, errors } = response as GraphQLResult<any>;
+      if (!errors && data?.askBedrock) {
+        setResult(data.askBedrock);
       } else {
-        console.log(errors);
+        console.error("GraphQL errors:", errors);
+        setResult("Error generating recipe. Please try again.");
       }
-
-  
-    } catch (e) {
-      alert(`An error occurred: ${e}`);
+    } catch (e: any) {
+      console.error("Error:", e);
+      alert(`Error: ${e.message || JSON.stringify(e)}`);
     } finally {
       setLoading(false);
     }

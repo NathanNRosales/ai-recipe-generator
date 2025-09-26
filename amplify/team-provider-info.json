@@ -1,19 +1,29 @@
 {
   "dev": {
     "awscloudformation": {
-      "AuthRoleName": "amplify-airecipegenerator-dev-57419-authRole",
-      "UnauthRoleArn": "arn:aws:iam::891377290691:role/amplify-airecipegenerator-dev-57419-unauthRole",
-      "AuthRoleArn": "arn:aws:iam::891377290691:role/amplify-airecipegenerator-dev-57419-authRole",
+      "AuthRoleName": "amplify-airecipegen-dev-70610-authRole",
+      "UnauthRoleArn": "arn:aws:iam::891377290691:role/amplify-airecipegen-dev-70610-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::891377290691:role/amplify-airecipegen-dev-70610-authRole",
       "Region": "us-east-1",
-      "DeploymentBucketName": "amplify-airecipegenerator-dev-57419-deployment",
-      "UnauthRoleName": "amplify-airecipegenerator-dev-57419-unauthRole",
-      "StackName": "amplify-airecipegenerator-dev-57419",
-      "StackId": "arn:aws:cloudformation:us-east-1:891377290691:stack/amplify-airecipegenerator-dev-57419/603896a0-8883-11f0-9018-122e5b2498f9",
-      "AmplifyAppId": "d1k01x9iwo5iss"
+      "DeploymentBucketName": "amplify-airecipegen-dev-70610-deployment",
+      "UnauthRoleName": "amplify-airecipegen-dev-70610-unauthRole",
+      "StackName": "amplify-airecipegen-dev-70610",
+      "StackId": "arn:aws:cloudformation:us-east-1:891377290691:stack/amplify-airecipegen-dev-70610/b20ab4c0-9af0-11f0-b679-0afff9a1d52f",
+      "AmplifyAppId": "d1looe89obwa6z"
     },
     "categories": {
+      "function": {
+        "airecipegend0212dc3": {
+          "deploymentBucketName": "amplify-airecipegen-dev-70610-deployment",
+          "s3Key": "amplify-builds/airecipegend0212dc3-54544c6a76337567796e-build.zip"
+        },
+        "askBedrock": {
+          "deploymentBucketName": "amplify-airecipegen-dev-70610-deployment",
+          "s3Key": "amplify-builds/askBedrock-696d5573707733553637-build.zip"
+        }
+      },
       "api": {
-        "airecipegenerator": {}
+        "airecipegen": {}
       }
     }
   }

@@ -1,6 +1,0 @@
-{
-  "AppSyncApiName": "airecipegenerator",
-  "DynamoDBBillingMode": "PAY_PER_REQUEST",
-  "DynamoDBEnableServerSideEncryption": false,
-  "AuthModeLastUpdated": "2025-09-03T05:16:15.487Z"
-}
