@@ -1,6 +1,11 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
+export const askBedrock = /* GraphQL */ `
+  query AskBedrock($ingredients: [String!]!) {
+    askBedrock(ingredients: $ingredients)
+  }
+`;
 export const getTodo = /* GraphQL */ `
   query GetTodo($id: ID!) {
     getTodo(id: $id) {

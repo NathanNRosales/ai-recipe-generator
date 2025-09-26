@@ -1,15 +1,15 @@
 {
   "api": {
-    "airecipegenerator": {
+    "airecipegen": {
       "dependsOn": [],
       "output": {
         "authConfig": {
           "additionalAuthenticationProviders": [],
           "defaultAuthentication": {
             "apiKeyConfig": {
-              "apiKeyExpirationDate": "2026-09-03T05:20:46.993Z",
-              "apiKeyExpirationDays": 365,
-              "description": "Amplify AI RECIPE"
+              "apiKeyExpirationDate": "2025-10-03T15:53:25.020Z",
+              "apiKeyExpirationDays": 7,
+              "description": "recipe"
             },
             "authenticationType": "API_KEY"
           }
@@ -17,6 +17,52 @@
       },
       "providerPlugin": "awscloudformation",
       "service": "AppSync"
+    }
+  },
+  "function": {
+    "airecipegend0212dc3": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "askBedrock": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    }
+  },
+  "parameters": {
+    "AMPLIFY_function_airecipegend0212dc3_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "airecipegend0212dc3"
+        }
+      ]
+    },
+    "AMPLIFY_function_airecipegend0212dc3_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "airecipegend0212dc3"
+        }
+      ]
+    },
+    "AMPLIFY_function_askBedrock_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "askBedrock"
+        }
+      ]
+    },
+    "AMPLIFY_function_askBedrock_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "askBedrock"
+        }
+      ]
     }
   }
 }

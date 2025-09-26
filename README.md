@@ -2,7 +2,9 @@
 
 AI Recipe Generator.
 
-Takes input from user of consumable foods and creates a recipe for you to eat. 
+Create a account, and you will be asked to enter some ingredients you have,
+the more ingredients the better. 
 
+It will tell you 
 
 https://main.d2lzl7703dv068.amplifyapp.com/ 
